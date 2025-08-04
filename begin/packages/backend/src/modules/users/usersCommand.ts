@@ -1,11 +1,8 @@
 import {
   InvalidParamsException,
   InvalidRequestBodyException,
-} from "@dddforum/backend/src/shared/exceptions";
-import {
-  isBetweenLength,
-  isMissingKeys,
-} from "@dddforum/backend/src/shared/utils/parser";
+} from "../../shared/exceptions";
+import { isBetweenLength, isMissingKeys } from "../../shared/utils/parser";
 import { CreateUserParams } from "@dddforum/shared/src/api/users";
 
 export class CreateUserCommand {

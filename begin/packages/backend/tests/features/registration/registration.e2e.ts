@@ -8,9 +8,9 @@ import {
   CreateUserResponse,
 } from "@dddforum/shared/src/api/users";
 import { createAPIClient } from "@dddforum/shared/src/api";
-import { CompositionRoot } from "@dddforum/backend/src/shared/compositionRoot";
-import { WebServer } from "@dddforum/backend/src/shared/http/webServer";
-import { Config } from "@dddforum/backend/src/shared/config";
+import { CompositionRoot } from "../../src/shared/compositionRoot";
+import { WebServer } from "../../src/shared/http/webServer";
+import { Config } from "../../src/shared/config";
 import { Database } from "../../../src/shared/database";
 import { AddEmailToListResponse } from "@dddforum/shared/src/api/marketing";
 
