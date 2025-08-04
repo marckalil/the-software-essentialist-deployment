@@ -2,6 +2,11 @@
     "extends": "../../tsconfig.build.json",
     "compilerOptions": {
       "outDir": "./dist",
+      "rootDir": "./src",
+      "baseUrl": "./src",
+      "paths": {
+        "@dddforum/backend/*": ["*"]
+      },
       "types": ["node"]
     },
     "exclude": [
