@@ -4,6 +4,17 @@
       "outDir": "./dist",
       "types": ["node"]
     },
-    "include": ["./src"]
+    "exclude": [
+      "node_modules",
+      "tests",
+      "dist",
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      "**/*.unit.ts",
+      "**/*.e2e.ts",
+      "**/*.infra.ts",
+      "**/__tests__/**"
+    ],
+    "include": ["./src/**/*"]
   }
   
