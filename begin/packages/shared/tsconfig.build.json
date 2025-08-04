@@ -10,7 +10,9 @@
     "tests",
     "dist",
     "**/*.test.ts",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "**/*.unit.ts",
+    "**/__tests__/**"
   ],
   "include": ["src/**/*"]
 }
