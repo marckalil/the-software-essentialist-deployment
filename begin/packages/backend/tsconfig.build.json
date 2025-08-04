@@ -5,7 +5,7 @@
       "rootDir": "./src",
       "baseUrl": "./src",
       "paths": {
-        "@dddforum/shared/*": ["../../../shared/src/*"]
+        "@dddforum/shared/src/*": ["../shared/dist/*"]
       },
       "types": ["node"]
     },
