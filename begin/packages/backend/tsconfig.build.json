@@ -2,16 +2,14 @@
     "extends": "../../tsconfig.build.json",
     "compilerOptions": {
       "outDir": "./dist",
-      "rootDir": "../../",
-      "baseUrl": ".",
+      "rootDir": "./src",
+      "baseUrl": "./src",
       "paths": {
-        "@dddforum/shared/*": ["../shared/*"]
+        "@dddforum/shared/*": ["../../../shared/src/*"]
       },
       "types": ["node"]
     },
-    "include": ["./src/**/*", "../shared/src/**/*"],
-    "references": [
-      { "path": "../shared" }
-    ]
+    "include": ["./src/**/*"],
+    "exclude": ["./src/**/*.test.ts", "./src/**/*.spec.ts", "./tests/**/*"]
   }
   
