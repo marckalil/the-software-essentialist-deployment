@@ -9,7 +9,6 @@ import { TransactionalEmailAPI } from "../notifications/ports/transactionalEmail
 import { UsersRepository } from "./ports/usersRepository";
 import { TextUtil } from "@dddforum/shared/src/utils/textUtil";
 
-
 export class UsersService {
   constructor(
     private repository: UsersRepository,
@@ -30,12 +29,12 @@ export class UsersService {
     if (existingUserByUsername) {
       throw new UsernameAlreadyTakenException(userData.username);
     }
-    
+
     const validatedUser: ValidatedUser = {
       ...userData.props,
-      password: TextUtil.createRandomText(10)
-    }
-    
+      password: TextUtil.createRandomText(10),
+    };
+
     const prismaUser = await this.repository.save(validatedUser);
 
     await this.emailAPI.sendMail({
