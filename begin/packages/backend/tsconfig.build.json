@@ -11,6 +11,8 @@
     },
     "include": ["./src/**/*"],
     "exclude": [
+      "**/*.e2e.ts",
+      "**/*.infra.ts",
       "**/*.unit.ts",
       "**/*.test.ts",
       "**/*.spec.ts",
