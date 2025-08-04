@@ -8,7 +8,7 @@ import {
   PostsModule,
   NotificationsModule,
   MarketingModule,
-} from "@dddforum/backend/src/modules";
+} from "../../modules";
 
 export class CompositionRoot {
   private static instance: CompositionRoot | null = null;
@@ -80,7 +80,7 @@ export class CompositionRoot {
   }
 
   private createDBConnection() {
-    if(this.shouldBuildFakeRepository()) {
+    if (this.shouldBuildFakeRepository()) {
       return new FakeDatabase();
     }
     const dbConnection = new PrismaDatabase();

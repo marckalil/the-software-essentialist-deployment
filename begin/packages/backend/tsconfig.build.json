@@ -2,24 +2,8 @@
     "extends": "../../tsconfig.build.json",
     "compilerOptions": {
       "outDir": "./dist",
-      "rootDir": "./src",
-      "baseUrl": "./src",
-      "paths": {
-        "@dddforum/backend/*": ["*"]
-      },
       "types": ["node"]
     },
-    "exclude": [
-      "node_modules",
-      "tests",
-      "dist",
-      "**/*.test.ts",
-      "**/*.spec.ts",
-      "**/*.unit.ts",
-      "**/*.e2e.ts",
-      "**/*.infra.ts",
-      "**/__tests__/**"
-    ],
     "include": ["./src/**/*"]
   }
   
