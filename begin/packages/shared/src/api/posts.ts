@@ -26,8 +26,7 @@ export const createPostsAPI = (apiURL: string) => {
       try {
         const successResponse = await axios.get(`${apiURL}/posts?sort=${sort}`);
         return successResponse.data as GetPostsResponse;
-      } catch (err) {
-        //@ts-expect-error
+      } catch (err: any) {
         return err.response.data as GetPostsResponse;
       }
     },
