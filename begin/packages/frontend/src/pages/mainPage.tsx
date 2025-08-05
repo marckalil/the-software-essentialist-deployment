@@ -11,7 +11,7 @@ export const MainPage = () => {
       const response = await api.posts.getPosts("recent");
       console.log("Posts loaded:", response);
       // @ts-ignore
-      setPosts(response.data);
+      setPosts(response.data ?? []);
     } catch (err) {
       console.log(err);
     }
