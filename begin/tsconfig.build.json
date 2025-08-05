@@ -14,7 +14,6 @@
       "@dddforum/frontend/*": ["./packages/frontend/*"],
       "@dddforum/shared/*": ["./packages/shared/*"]
     }
-
   },
   "exclude": [
     "**/*.spec.ts",
