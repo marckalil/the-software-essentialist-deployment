@@ -1,19 +1,13 @@
 {
-    "compilerOptions": {
-      "outDir": "build",
-      "esModuleInterop": true,
-      "paths": {
-        "@dddforum/shared/*": ["../shared/src/*"]
-      },
-      "types": ["node"]
-    },
-    "include": ["./src"],
-    "exclude": [
-      "**/*.spec.ts",
-      "**/*.infra.ts",
-      "**/*.test.ts",
-      "**/*.unit.ts",
-      "**/*.e2e.ts"
-    ]
-  }
+  "extends": "../../tsconfig.build.json",
+  "baseUrl": ".",
+  "outDir": "build",
+  "rootDir": "src",
+  "compilerOptions": {
+    "outDir": "build",
+    "esModuleInterop": true,
+    "types": ["node"]
+  },
+  "include": ["./src"],
+}
   
