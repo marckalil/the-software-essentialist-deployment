@@ -9,6 +9,9 @@
       },
       "types": ["node"]
     },
+    "paths": {
+      "@dddforum/*": ["../*"]
+    },
     "include": ["./src/**/*"],
     "exclude": [
       "**/*.e2e.ts",
