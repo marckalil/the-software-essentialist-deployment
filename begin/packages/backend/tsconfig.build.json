@@ -1,11 +1,19 @@
 {
     "compilerOptions": {
       "outDir": "build",
+      "esModuleInterop": true,
       "paths": {
         "@dddforum/shared/*": ["../shared/src/*"]
       },
       "types": ["node"]
     },
-    "include": ["./src"]
+    "include": ["./src"],
+    "exclude": [
+      "**/*.spec.ts",
+      "**/*.infra.ts",
+      "**/*.test.ts",
+      "**/*.unit.ts",
+      "**/*.e2e.ts"
+    ]
   }
   
