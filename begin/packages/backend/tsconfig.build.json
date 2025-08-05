@@ -3,11 +3,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "build",
-    "rootDir": "src",
     "esModuleInterop": true,
     "types": ["node"],
     "paths": {
-      "@dddforum/shared/*": ["../shared/src/*"]
+      "@dddforum/shared/*": ["../shared/*"]
     }
   },
   "include": ["./src"]
