@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Layout } from "../components/layout";
 import { PostsList } from "../components/postsList";
@@ -9,9 +8,10 @@ export const MainPage = () => {
   const [posts, setPosts] = useState([]);
   const loadPosts = async () => {
     try {
-      const response = await api.posts.getPosts('recent');
+      const response = await api.posts.getPosts("recent");
+      console.log("Posts loaded:", response);
       // @ts-ignore
-      setPosts(response.data.posts)
+      setPosts(response.data);
     } catch (err) {
       console.log(err);
     }
@@ -19,15 +19,12 @@ export const MainPage = () => {
 
   useEffect(() => {
     loadPosts();
-  }, [])
-
+  }, []);
 
   return (
     <Layout>
       <PostsViewSwitcher />
-      <PostsList
-        posts={posts}
-      />
+      <PostsList posts={posts} />
     </Layout>
   );
 };
