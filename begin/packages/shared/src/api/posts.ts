@@ -8,10 +8,17 @@ export type GetPostsParams = {
 export type Post = {
   id: number;
   memberId: number;
+  memberPostedBy: {
+    user: {
+      username: string;
+    };
+  };
   postType: string;
   title: string;
   content: string;
   dateCreated: string;
+  comments: any[];
+  votes: any[];
 };
 
 export type GetPostErrors = ServerError;

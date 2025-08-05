@@ -12,10 +12,15 @@ export class ProductionPostsRepository implements PostsRepository {
     return {
       id: post.id,
       memberId: post.memberId,
+      memberPostedBy: {
+        user: post.memberPostedBy.user,
+      },
       postType: post.postType,
       title: post.title,
       content: post.content,
       dateCreated: post.dateCreated.toISOString(),
+      comments: post.comments || [],
+      votes: post.votes || [],
     };
   }
 
@@ -28,6 +33,19 @@ export class ProductionPostsRepository implements PostsRepository {
     try {
       const posts = await this.prisma.post.findMany({
         orderBy: { dateCreated: "desc" },
+        include: {
+          memberPostedBy: {
+            include: {
+              user: {
+                select: {
+                  username: true,
+                },
+              },
+            },
+          },
+          comments: true,
+          votes: true,
+        },
       });
       const formattedPosts = posts.map(this.formatPost);
 
