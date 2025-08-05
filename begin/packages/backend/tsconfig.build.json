@@ -5,7 +5,10 @@
     "outDir": "build",
     "rootDir": "src",
     "esModuleInterop": true,
-    "types": ["node"]
+    "types": ["node"],
+    "paths": {
+      "@dddforum/shared/*": ["../shared/src/*"]
+    }
   },
   "include": ["./src"]
 }
