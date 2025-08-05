@@ -10,6 +10,9 @@
     "resolveJsonModule": true,
     "declaration": true
   },
+      "paths": {
+      "@dddforum/*": ["./packages/*"]
+    },
   "exclude": [
     "**/*.spec.ts",
     "**/*.infra.ts",

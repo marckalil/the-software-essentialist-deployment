@@ -4,13 +4,7 @@
       "outDir": "./dist",
       "rootDir": "./src",
       "baseUrl": "./src",
-      "paths": {
-        "@dddforum/shared/src/*": ["../shared/dist/*"]
-      },
       "types": ["node"]
-    },
-    "paths": {
-      "@dddforum/*": ["../*"]
     },
     "include": ["./src/**/*"],
     "exclude": [
