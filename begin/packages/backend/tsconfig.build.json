@@ -1,6 +1,10 @@
 {
     "extends": "../../tsconfig.build.json",
     "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@dddforum/shared/*": ["../shared/src/*"]
+      },
       "outDir": "./build",
       "types": ["node"]
     },
