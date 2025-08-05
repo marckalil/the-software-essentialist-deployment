@@ -2,10 +2,10 @@
   "name": "@dddforum/shared",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "clean": "rimraf ./dist",
-    "build": "npm run clean && tsc -b tsconfig.build.json && tsc-alias -p tsconfig.build.json"
+    "build": "npm run clean && tsc -b tsconfig.build.json --outDir ./dist && tsc-alias -p tsconfig.build.json"
   },
   "keywords": [],
   "author": "",
