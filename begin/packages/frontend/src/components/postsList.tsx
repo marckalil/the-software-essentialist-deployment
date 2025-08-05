@@ -27,7 +27,7 @@ export const PostsList = ({ posts }: { posts: Post[] }) => (
           <div className="post-item-upvote">
             <img src={arrow} />
           </div>
-          <div>{computeVoteCount(post.votes)}</div>
+          <div>{computeVoteCount(post.votes ?? [])}</div>
           <div className="post-item-downvote">
             <img src={arrow} />
           </div>
