@@ -2,18 +2,8 @@
     "extends": "../../tsconfig.build.json",
     "compilerOptions": {
       "outDir": "./dist",
-      "rootDir": "./src",
-      "baseUrl": "./src",
       "types": ["node"]
     },
-    "include": ["./src/**/*"],
-    "exclude": [
-      "**/*.e2e.ts",
-      "**/*.infra.ts",
-      "**/*.unit.ts",
-      "**/*.test.ts",
-      "**/*.spec.ts",
-      "tests"
-    ]
+    "include": ["./src"]
   }
   
