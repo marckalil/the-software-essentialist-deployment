@@ -1,0 +1,50 @@
+name: Commit Phase
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "begin/**"
+      - ".github/**"
+    branches:
+      - deployment
+
+env:
+  PROJECT_PATH: "begin"
+
+jobs:
+  lint-build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "npm"
+          cache-dependency-path: ${{ env.PROJECT_PATH }}/package.json
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ${{ env.PROJECT_PATH }}
+
+      - name: Lint
+        run: npm run lint
+        working-directory: ${{ env.PROJECT_PATH }}
+        env:
+          NODE_OPTIONS: --experimental-vm-modules
+
+      - name: Build
+        run: npm run build
+        working-directory: ${{ env.PROJECT_PATH }}
+        env:
+          NODE_OPTIONS: --experimental-vm-modules
+
+      - name: Test (core unit tests)
+        run: npm run test:unit
+        working-directory: ${{ env.PROJECT_PATH }}

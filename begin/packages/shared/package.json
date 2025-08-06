@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-      "clean": "rimraf ./dist",
-      "build": "npm run clean && tsc -b tsconfig.build.json"
+    "clean": "rimraf ./dist",
+    "build": "npm run clean && tsc -b tsconfig.build.json && tsc-alias -p tsconfig.build.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "tsc-alias": "^1.8.8"
+  }
 }

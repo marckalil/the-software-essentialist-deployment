@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.build.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "build",
+    "esModuleInterop": true,
+    "types": ["node"],
+    "paths": {
+      "@dddforum/shared/*": ["../shared/*"]
+    }
+  },
+  "include": ["./src"]
+}

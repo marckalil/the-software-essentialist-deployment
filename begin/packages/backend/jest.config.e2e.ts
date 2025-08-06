@@ -1,18 +1,20 @@
-import * as path from 'path';
-import type { JestConfigWithTsJest } from 'ts-jest';
-import { pathsToModuleNameMapper } from 'ts-jest';
+import * as path from "path";
+import type { JestConfigWithTsJest } from "ts-jest";
+import { pathsToModuleNameMapper } from "ts-jest";
 
-import { compilerOptions } from '../../tsconfig.json';
+import { compilerOptions } from "../../tsconfig.json";
 
 export default async (): Promise<JestConfigWithTsJest> => ({
-  displayName: 'Backend (E2E)',
-  testMatch: ['**/@(src|tests)/**/*.@(e2e).*'],
+  displayName: "Backend (E2E)",
+  testMatch: ["**/@(src|tests)/**/*.@(e2e).*"],
   transform: {
-    '^.+\\.(t|j)sx?$': ['ts-jest', {}],
+    "^.+\\.(t|j)sx?$": ["ts-jest", {}],
   },
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
-    prefix: path.resolve(__dirname, '../../'),
+    prefix: path.resolve(__dirname, "../../"),
   }),
+  setupFilesAfterEnv: ["<rootDir>/tests/support/testSetup.ts"],
+  testEnvironment: "node",
   maxWorkers: 1,
-  globalSetup: './tests/support/globalDevEnvTestSetup.ts',
+  globalSetup: "./tests/support/globalDevEnvTestSetup.ts",
 });
