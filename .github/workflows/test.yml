@@ -1,0 +1,41 @@
+name: Testing on Staging
+
+on:
+  workflow_run:
+    workflows: ["Automatically Deploy to Staging and Production"]
+    types:
+      - completed
+
+env:
+  NODE_ENV: staging
+  PROJECT_PATH: "begin"
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.16
+
+      - name: Install
+        run: npm install
+        working-directory: ${{ env.PROJECT_PATH }}
+
+      - name: Wait for 300 seconds
+        run: sleep 300s
+        shell: bash
+
+      - name: Test (core e2e tests)
+        run: npm run test:staging
+        working-directory: ${{ env.PROJECT_PATH }}
+
+      - name: Re-feed
+        run: npm run db:reset && npm run db:seed
+        working-directory: ${{ env.PROJECT_PATH }}

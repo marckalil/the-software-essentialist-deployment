@@ -20,6 +20,8 @@
     "build:ci:shared": "npm run build --workspace=@dddforum/shared",
     "build:ci:backend": "npm run build:ci:shared && npm run build --workspace @dddforum/backend",
     "build:ci:frontend": "npm run build:ci:shared && npm run build --workspace @dddforum/frontend",
+    "db:reset": "npm run db:reset --workspace=@dddforum/backend",
+    "db::seed": "npm run db:seed --workspace=@dddforum/backend",
     "start:ci:backend": "npm run start:ci --workspace=@dddforum/backend",
     "start:dev:backend": "npm run start:dev --workspace=@dddforum/backend",
     "start:dev:frontend": "npm run start:dev --workspace=@dddforum/frontend",
