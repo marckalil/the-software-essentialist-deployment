@@ -36,6 +36,6 @@ jobs:
         run: npm run test:staging
         working-directory: ${{ env.PROJECT_PATH }}
 
-      - name: Re-feed
+      - name: Reset & Feed Database
         run: npm run db:reset && npm run db:seed
         working-directory: ${{ env.PROJECT_PATH }}
