@@ -60,7 +60,8 @@ async function main() {
   });
 
   // Create sample comments
-  const comment1 = await prisma.comment.create({
+  // comment1
+  await prisma.comment.create({
     data: {
       postId: post1.id,
       memberId: member2.id,
@@ -68,7 +69,8 @@ async function main() {
     },
   });
 
-  const comment2 = await prisma.comment.create({
+  // comment2
+  await prisma.comment.create({
     data: {
       postId: post2.id,
       memberId: member1.id,
