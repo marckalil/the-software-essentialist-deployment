@@ -7,11 +7,15 @@ on:
       - completed
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to production
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
-          service-id: srv-d26ei8euk2gs73c1hq00?key=JW4tMLgtwqI
+          service-id: srv-d26ei8euk2gs73c1hq00
           api-key: ${{ secrets.RENDER_TOKEN }}
+      - name: Display deployment status
+        run: |
+          echo "Deployment triggered. Check the Render dashboard for deployment status."
+          echo "https://dashboard.render.com"
