@@ -7,7 +7,7 @@ on:
       - "begin/**"
       - ".github/**"
     branches:
-      - deployment
+      - main
 
 env:
   PROJECT_PATH: "begin"
