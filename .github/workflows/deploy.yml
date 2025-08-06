@@ -10,10 +10,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to production
+      - name: Deploy Backend to production
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
           service-id: srv-d26ei8euk2gs73c1hq00
+          api-key: ${{ secrets.RENDER_TOKEN }}
+      - name: Deploy Frontend to production
+        uses: johnbeynon/render-deploy-action@v0.0.8
+        with:
+          service-id: srv-d26f1bqdbo4c73cltmtg
           api-key: ${{ secrets.RENDER_TOKEN }}
       - name: Display deployment status
         run: |
