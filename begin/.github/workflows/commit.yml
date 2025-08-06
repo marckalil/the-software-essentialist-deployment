@@ -17,14 +17,18 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 16.16
+          cache: "npm"
+          cache-dependency-path: ${{ env.PROJECT_PATH }}/package.json
 
-      - name: Install
+      - name: Install dependencies
         run: npm ci
         working-directory: ${{ env.PROJECT_PATH }}
 
