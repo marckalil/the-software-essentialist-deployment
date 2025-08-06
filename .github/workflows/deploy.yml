@@ -10,8 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Check render token
-        run: echo "Checking render token..." ${{ secrets.RENDER_TOKEN }}
       - name: Deploy to production
         uses: johnbeynon/render-deploy-action@v0.0.8
         with:
