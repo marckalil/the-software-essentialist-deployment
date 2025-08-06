@@ -5,6 +5,8 @@ on:
     workflows: ["Commit Phase"]
     types:
       - completed
+    branches-ignore:
+      - main
 
 jobs:
   build:
