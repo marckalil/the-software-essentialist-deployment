@@ -2,7 +2,7 @@ name: Best Practices Assignment - Automatically Deploy to Staging
 
 on:
   workflow_run:
-    workflows: ["Best Practices Assignment - Commit Phase"]
+    workflows: ["Commit Phase"]
     types:
       - completed
     branches:

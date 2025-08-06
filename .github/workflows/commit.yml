@@ -1,4 +1,4 @@
-name: Best Practices Assignment - Commit Phase
+name: Commit Phase
 
 on:
   workflow_dispatch:
