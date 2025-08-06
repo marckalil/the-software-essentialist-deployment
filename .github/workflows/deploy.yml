@@ -5,6 +5,7 @@ on:
     workflows: ["Commit Phase"]
     types:
       - completed
+
 jobs:
   build:
     runs-on: ubuntu-latest
