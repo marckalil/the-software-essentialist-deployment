@@ -5,6 +5,8 @@ on:
     workflows: ["Best Practices Assignment - Commit Phase"]
     types:
       - completed
+    branches:
+      - deployment
 
 jobs:
   build:
