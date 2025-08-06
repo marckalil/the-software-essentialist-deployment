@@ -1,4 +1,4 @@
-name: Best Practices Assignment - Automatically Deploy to Staging
+name: Automatically Deploy to Staging
 
 on:
   workflow_run:
