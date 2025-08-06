@@ -2,7 +2,7 @@ name: Testing on Staging
 
 on:
   workflow_run:
-    workflows: ["Automatically Deploy to Staging and Production"]
+    workflows: ["Automatically Deploy to Staging"]
     types:
       - completed
 
