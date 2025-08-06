@@ -4,12 +4,12 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "https://github.com/marckalil/the-software-essentialist-deployment/begin/**"
+      - "begin/**"
     branches:
       - deployment # or specify your desired branch
 
 env:
-  PROJECT_PATH: "https://github.com/marckalil/the-software-essentialist-deployment/begin"
+  PROJECT_PATH: "begin"
 
 jobs:
   lint-build-test:
