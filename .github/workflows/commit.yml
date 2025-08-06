@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - "begin/**"
+      - ".github/**"
     branches:
       - deployment # or specify your desired branch
 
