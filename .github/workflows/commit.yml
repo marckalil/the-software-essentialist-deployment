@@ -29,12 +29,8 @@ jobs:
           cache: "npm"
           cache-dependency-path: ${{ env.PROJECT_PATH }}/package.json
 
-      - name: Install dependencies for all workspaces
-        run: npm ci
-        working-directory: ${{ env.PROJECT_PATH }}
-
-      - name: Install workspace dependencies
-        run: npm run bootstrap
+      - name: Install dependencies
+        run: npm install
         working-directory: ${{ env.PROJECT_PATH }}
 
       - name: Lint
